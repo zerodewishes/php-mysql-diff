@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "homepage": "https://github.com/hugoup/php-mysql-diff",
   "keywords": ["database","diff","mysql","migration","generator","script"],
+  "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
     {
