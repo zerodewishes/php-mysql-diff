@@ -1,6 +1,7 @@
 {
   "name": "hugoup/php-mysql-diff",
-  "type": "project",
+  "type": "library",
+  "version": "1.0.0",
   "homepage": "https://github.com/hugoup/php-mysql-diff",
   "keywords": ["database","diff","mysql","migration","generator","script"],
   "license": "MIT",
