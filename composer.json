@@ -1,9 +1,16 @@
 {
-  "name": "hugoup/php-mysql-diff",
+  "name": "zerodewishes/php-mysql-diff",
   "type": "library",
   "version": "1.0.0",
-  "homepage": "https://github.com/hugoup/php-mysql-diff",
-  "keywords": ["database","diff","mysql","migration","generator","script"],
+  "homepage": "https://github.com/zerodewishes/php-mysql-diff",
+  "keywords": [
+    "database",
+    "diff",
+    "mysql",
+    "migration",
+    "generator",
+    "script"
+  ],
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
@@ -12,7 +19,7 @@
       "role": "Developer"
     },
     {
-      "name": "Hewgo"
+      "name": "Bubbus"
     }
   ],
   "require": {
@@ -27,5 +34,7 @@
       "Camcima\\MySqlDiff\\": "src/"
     }
   },
-  "bin": ["php-mysql-diff"]
+  "bin": [
+    "php-mysql-diff"
+  ]
 }
