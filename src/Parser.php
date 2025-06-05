@@ -136,6 +136,8 @@ class Parser
             $comment = $matches['comment'][$i];
             $characterSet = $matches['characterSet'][$i];
             $collate = $matches['collate'][$i];
+            $generatedExpr = $matches['generatedExpr'][$i];
+            $generatedType = $matches['generatedType'][$i];
 
             $column = new Column($columnName);
             $column->setColumnType($columnType);
@@ -150,6 +152,13 @@ class Parser
             $column->setPrecision($this->getColumnPrecision($decimalPrecision, $doublePrecision, $floatPrecision));
             $column->setNullable($nullable !== 'NOT NULL');
             $column->setAutoIncrement(!empty($autoIncrement));
+
+            if (!empty($generatedExpr)) {
+                $column->setGeneratedExpression($generatedExpr);
+                if (!empty($generatedType)) {
+                    $column->setGeneratedType($generatedType);
+                }
+            }
 
             if (!empty($defaultValue)) {
                 $column->setDefaultValue($defaultValue);

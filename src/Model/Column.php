@@ -40,6 +40,16 @@ class Column
     /**
      * @var string
      */
+    private $generatedExpression;
+
+    /**
+     * @var string
+     */
+    private $generatedType;
+
+    /**
+     * @var string
+     */
     private $collate;
 
     /**
@@ -196,6 +206,38 @@ class Column
     public function setCharacterSet($characterSet)
     {
         $this->characterSet = $characterSet;
+    }
+
+    /**
+     * @param string $generatedExpression
+     */
+    public function setGeneratedExpression($generatedExpression)
+    {
+        $this->generatedExpression = $generatedExpression;
+    }
+
+    /**
+     * @param string $generatedType
+     */
+    public function setGeneratedType($generatedType)
+    {
+        $this->generatedType = $generatedType;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGeneratedType()
+    {
+        return $this->generatedType;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGeneratedExpression()
+    {
+        return $this->generatedExpression;
     }
 
     /**
@@ -419,6 +461,10 @@ class Column
 
         if ($this->collate) {
             $columnOptions[] = sprintf('COLLATE %s', $this->collate);
+        }
+
+        if (!empty($this->generatedExpression)) {
+            $columnOptions[] = sprintf('GENERATED ALWAYS AS (%s) %s', $this->generatedExpression, $this->generatedType);
         }
 
         if (!$this->nullable) {

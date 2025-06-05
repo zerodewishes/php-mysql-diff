@@ -73,6 +73,7 @@ class RegExpPattern
         $pattern .= '(?:DEFAULT (?<defaultValue>\S+|\'[^\']+\'))?\s*';
         $pattern .= '(?:ON UPDATE (?<onUpdateValue>\S+))?\s*';
         $pattern .= '(?:COMMENT \'(?<comment>([^\']|\'\')+)\')?\s*';
+        $pattern .= '(?:GENERATED ALWAYS AS \((?<generatedExpr>[^\)]+)\)\s*(?<generatedType>STORED|VIRTUAL)?)?\s*';
         $pattern .= '(?:,|$)/';
         $pattern .= 'i'; // modifier
 
